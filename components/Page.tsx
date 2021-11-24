@@ -1,8 +1,28 @@
-import { useEffect } from "react"
-import { useAppState } from "../hooks"
+import { motion, AnimatePresence } from "framer-motion"
+import { useRouter } from "next/dist/client/router"
 
-const Page = ({ children }) => {
-  return <div>{children}</div>
+const variants = {
+  initial: { y: 20, opacity: 0 },
+  enter: { y: 0, opacity: 1 },
+  exit: { y: -20, opacity: 0 },
+}
+
+const Page = ({ children }: any) => {
+  const { pathname } = useRouter()
+
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <motion.main
+        key={pathname}
+        variants={variants}
+        initial='initial'
+        animate='enter'
+        exit='exit'
+      >
+        {children}
+      </motion.main>
+    </AnimatePresence>
+  )
 }
 
 export default Page

@@ -1,7 +1,12 @@
 import Link from "next/link"
+import styled from "styled-components"
 
-const Header = () => (
-  <nav>
+type HeaderProps = {
+  className?: string
+}
+
+const Header = ({ className }: HeaderProps) => (
+  <nav className={className}>
     <ul>
       <li>
         <Link href='/'>
@@ -22,4 +27,21 @@ const Header = () => (
   </nav>
 )
 
-export default Header
+export default styled(Header)/*css */ `
+  width: 100vw;
+
+  ul {
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+      padding: 1rem;
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+`
