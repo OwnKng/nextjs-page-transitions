@@ -4,7 +4,7 @@ import { useRouter } from "next/dist/client/router"
 const variants = {
   initial: { y: 20, opacity: 0 },
   enter: { y: 0, opacity: 1 },
-  exit: { y: -20, opacity: 0 },
+  exit: { y: 20, opacity: 0 },
 }
 
 const Page = ({ children }: any) => {

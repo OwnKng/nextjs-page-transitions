@@ -7,6 +7,7 @@ type HeaderProps = {
 
 const Header = ({ className }: HeaderProps) => (
   <nav className={className}>
+    <h1>Company</h1>
     <ul>
       <li>
         <Link href='/'>
@@ -29,6 +30,15 @@ const Header = ({ className }: HeaderProps) => (
 
 export default styled(Header)/*css */ `
   width: 100vw;
+  display: flex;
+  text-transform: uppercase;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0px;
+    padding: 1rem 0.5rem;
+    font-weight: 200;
+  }
 
   ul {
     margin: 0px;
@@ -41,7 +51,5 @@ export default styled(Header)/*css */ `
     }
   }
 
-  a {
-    text-transform: uppercase;
-  }
+  border-bottom: 1px solid #72757e;
 `
